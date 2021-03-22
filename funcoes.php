@@ -3,7 +3,7 @@
 function sacar(array $conta, float $valorASacar): array
 {
     if ($valorASacar > $conta['saldo']) {
-        exibeMensagem("Você não tem saldo suficiente");
+        exibeMensagem("Voc? n?o tem saldo suficiente");
     } else {
         $conta['saldo'] -= $valorASacar;
     }
@@ -23,10 +23,16 @@ function depositar(array $conta, float $valorADepositar): array
 
 function exibeMensagem(string $mensagem)
 {
-    echo $mensagem . PHP_EOL;
+    echo $mensagem . '<br>';
 }
 
 function titularComLetrasMaiusculas(array &$conta)
 {
     $conta['titular'] = strtoupper($conta['titular']);
+}
+
+function exibeConta(array $conta)
+{
+    ['titular' => $titular, 'saldo' => $saldo] = $conta;
+    echo "<li>Titular: $titular. Saldo: $saldo</li>";
 }

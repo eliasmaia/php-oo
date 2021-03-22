@@ -1,30 +1,6 @@
 <?php
 
-function sacar(array $conta, float $valorASacar): array
-{
-    if ($valorASacar > $conta['saldo']) {
-        exibeMensagem("Você não tem saldo suficiente");
-    } else {
-        $conta['saldo'] -= $valorASacar;
-    }
-
-    return $conta;
-}
-
-function depositar(array $conta, float $valorADepositar): array
-{
-    if ($valorADepositar > 0) {
-        $conta['saldo'] += $valorADepositar;
-    } else {
-        exibeMensagem("Depositos precisam ser positivos");
-    }
-    return $conta;
-}
-
-function exibeMensagem(string $mensagem)
-{
-    echo $mensagem . PHP_EOL;
-}
+require_once 'funcoes.php';
 
 $contasCorrentes = [
     '121.212.1' => [
@@ -46,5 +22,5 @@ $contasCorrentes['333.222.3'] = sacar($contasCorrentes['333.222.3'], 500);
 $contasCorrentes['121.212.1'] = depositar($contasCorrentes['121.212.1'], 500);
 
 foreach ($contasCorrentes as $cpf => $conta) {
-    exibeMensagem($cpf . " " . $conta['titular'] . ' ' . $conta['saldo']);
+    exibeMensagem("$cpf {$conta['titular']} {$conta['saldo']}");
 }

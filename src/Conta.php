@@ -4,7 +4,22 @@ class Conta
 {
     private  $cpfTitular;
     private  $nomeTitular;
-    private  $saldo = 0;
+    private  $saldo;
+    private static $numeroDeContas;
+
+    public function __construct(string $cpfTitular, string $nomeTitular)
+    {   
+        $this->$cpfTitular = $cpfTitular;
+        $this->validaNomeTitular($nomeTitular);
+        $this-> saldo = 0;
+
+        self::$numeroDeContas++;
+    }
+
+    public function __destruct()
+    {
+        self::$numeroDeContas--;
+    }
 
     public function saca(float $valorASacar): void
     {
@@ -42,23 +57,26 @@ class Conta
         return $this->saldo;
     }
 
-    public function setCpfTitular(string $cpf): void
-    {
-        $this->cpfTitular = $cpf;
-    }
-
     public function getCpfTitular(): string
     {
         return $this->cpfTitular;
     }
 
-    public function setNomeTitular(string $nome): void
-    {
-        $this->nomeTitular = $nome;
-    }
-
     public function getNomeTitular(): string
     {
         return $this->nomeTitular;
+    }
+
+    private function validaNomeTitular(string $nomeTitular)
+    {
+        if(strlen($nomeTitular) < 5){
+            echo "Nome precisa ter pelo menos 5 caracteres.";
+            exit();
+        }
+    }
+
+    public static function getNumeroDeContas(): int
+    {
+        return self::$numeroDeContas;
     }
 }

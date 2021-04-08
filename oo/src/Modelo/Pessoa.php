@@ -2,10 +2,10 @@
 
 namespace Alura\Banco\Modelo;
 
-Class Pessoa
+class Pessoa
 {
     protected $nome;
-    private  $cpf;
+    private $cpf;
 
     public function __construct(string $nome, CPF $cpf)
     {
@@ -14,14 +14,14 @@ Class Pessoa
         $this->cpf = $cpf;
     }
 
-    public function getNome(): string
+    public function recuperaNome(): string
     {
         return $this->nome;
     }
 
-    public function getCpf(): string
+    public function recuperaCpf(): string
     {
-        return $this->cpf->getNumero();
+        return $this->cpf->recuperaNumero();
     }
 
     protected function validaNomeTitular(string $nomeTitular)
@@ -31,5 +31,4 @@ Class Pessoa
             exit();
         }
     }
-
 }

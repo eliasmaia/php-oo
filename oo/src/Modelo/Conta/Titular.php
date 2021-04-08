@@ -12,12 +12,12 @@ class Titular extends Pessoa
 
     public function __construct(CPF $cpf, string $nome, Endereco $endereco)
     {
-        parent::__construct($nome, $cpf);       
+        parent::__construct($nome, $cpf);
         $this->endereco = $endereco;
     }
 
     public function recuperaEndereco(): Endereco
     {
         return $this->endereco;
-    }    
+    }
 }

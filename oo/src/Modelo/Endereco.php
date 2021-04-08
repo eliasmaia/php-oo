@@ -4,38 +4,36 @@ namespace Alura\Banco\Modelo;
 
 class Endereco
 {
-
     private $cidade;
-    private $rua;
     private $bairro;
+    private $rua;
     private $numero;
 
     public function __construct(string $cidade, string $bairro, string $rua, string $numero)
     {
         $this->cidade = $cidade;
-        $this->rua = $rua;
         $this->bairro = $bairro;
+        $this->rua = $rua;
         $this->numero = $numero;
     }
-    
-    public function getCidade(): string
+
+    public function recuperaCidade(): string
     {
         return $this->cidade;
     }
 
-    public function getRua(): string
-    {
-        return $this->rua;
-    }
-
-    public function getBairro(): string
+    public function recuperaBairro(): string
     {
         return $this->bairro;
     }
 
-    public function getNumero(): string
+    public function recuperaRua(): string
+    {
+        return $this->rua;
+    }
+
+    public function recuperaNumero(): string
     {
         return $this->numero;
     }
-
-}   
+}

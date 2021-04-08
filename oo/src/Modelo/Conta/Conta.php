@@ -6,12 +6,12 @@ abstract class Conta
 {
     private $titular;
     protected $saldo;
-    private static $numeroDeContas;
+    private static $numeroDeContas = 0;
 
     public function __construct(Titular $titular)
-    {   
+    {
         $this->titular = $titular;
-        $this-> saldo = 0;
+        $this->saldo = 0;
 
         self::$numeroDeContas++;
     }
@@ -26,14 +26,12 @@ abstract class Conta
         $tarifaSaque = $valorASacar * $this->percentualTarifa();
         $valorSaque = $valorASacar + $tarifaSaque;
         if ($valorSaque > $this->saldo) {
-            echo "Saldo indisponível";
+            echo "Saldo indisponÃ­vel";
             return;
         }
 
         $this->saldo -= $valorSaque;
     }
-
-    abstract public function percentualTarifa(): float;
 
     public function deposita(float $valorADepositar): void
     {
@@ -43,26 +41,27 @@ abstract class Conta
         }
 
         $this->saldo += $valorADepositar;
-    }    
+    }
 
-    public function getSaldo(): float
+    public function recuperaSaldo(): float
     {
         return $this->saldo;
     }
-    
-    public function getCpfTitular(): string
+
+    public function recuperaNomeTitular(): string
     {
-        return $this->titular->getCpf();
+        return $this->titular->recuperaNome();
     }
 
-    public function getNomeTitular(): string
+    public function recuperaCpfTitular(): string
     {
-        return $this->titular->getNome();
+        return $this->titular->recuperaCpf();
     }
 
-    public static function getNumeroDeContas(): int
+    public static function recuperaNumeroDeContas(): int
     {
         return self::$numeroDeContas;
     }
 
+    abstract protected function percentualTarifa(): float;
 }

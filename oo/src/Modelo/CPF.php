@@ -18,11 +18,10 @@ class CPF
             echo "Cpf inválido";
             exit();
         }
-
         $this->numero = $numero;
     }
 
-    public function getNumero(): string
+    public function recuperaNumero(): string
     {
         return $this->numero;
     }

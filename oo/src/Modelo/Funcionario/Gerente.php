@@ -8,4 +8,9 @@ class Gerente extends Funcionario
     {
         return $this->recuperaSalario();
     }
+
+    public function podeAutenticar(string $senha): bool
+    {
+        return $senha === '4321';
+    }
 }

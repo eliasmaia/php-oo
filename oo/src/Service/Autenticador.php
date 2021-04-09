@@ -9,9 +9,9 @@ class Autenticador
     public function tentaLogin(Autenticavel $autenticavel, string $senha): void
     {
         if ($autenticavel->podeAutenticar($senha)) {
-            echo "Ok. Usu?rio logado no sistema";
+            echo "Ok. Usuário logado no sistema";
         } else {
-            echo "Ops. Senha incorreta";
+            echo "Ops. Senha incorreta.";
         }
     }
 }

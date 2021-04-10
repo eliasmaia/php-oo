@@ -1,4 +1,4 @@
-<?php
+<?php declare(strict_types=1);
 
 require 'ArrayUtils.php';
 
@@ -9,14 +9,15 @@ $correntistas_e_compras = [
     "Maria",
     37,
     "Luisa",
-    26
+    26,
+    "12"
 ];
 
 echo "<pre>";
 var_dump($correntistas_e_compras);
 
-ArrayUtils::remover("Giovanni", $correntistas_e_compras);
-ArrayUtils::remover("Giovannnnni", $correntistas_e_compras);
+ArrayUtils::remover(12, $correntistas_e_compras);
+
 
 var_dump($correntistas_e_compras);
 echo "<pre>";

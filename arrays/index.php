@@ -1,15 +1,21 @@
 <?php
 
-$nomes = "Capello, Trapattoni, Ancelotti, Sacchi, Sarri, Allegri";
+require 'ArrayUtils.php';
 
-/* Explode - Separando*/
-$array_nomes = explode(", ", $nomes);
+$correntistas_e_compras = [
+    "Giovanni",
+    "João",
+    12,
+    "Maria",
+    37,
+    "Luisa",
+    26
+];
 
-foreach($array_nomes as $nome){
-    echo "<p>Olá, $nome!</p>";
-}
+echo "<pre>";
+var_dump($correntistas_e_compras);
 
+ArrayUtils::remover("Maria", $correntistas_e_compras);
 
-/* Implode - Juntando */
-$nomes_juntos = implode(", ", $array_nomes);
-echo "$nomes_juntos";
+var_dump($correntistas_e_compras);
+echo "<pre>";

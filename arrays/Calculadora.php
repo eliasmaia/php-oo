@@ -1,5 +1,6 @@
 <?php
 
+namespace Alura;
 class Calculadora
 {
     public function calculaMedia(array $notas): ?float

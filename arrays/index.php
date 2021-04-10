@@ -15,7 +15,8 @@ $correntistas_e_compras = [
 echo "<pre>";
 var_dump($correntistas_e_compras);
 
-ArrayUtils::remover("Maria", $correntistas_e_compras);
+ArrayUtils::remover("Giovanni", $correntistas_e_compras);
+ArrayUtils::remover("Giovannnnni", $correntistas_e_compras);
 
 var_dump($correntistas_e_compras);
 echo "<pre>";

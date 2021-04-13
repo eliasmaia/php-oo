@@ -2,6 +2,8 @@
 
 namespace Alura;
 
+require 'autoload.php';
+
 class ArrayUtils
 {
     public static function remover(int $elemento, array &$array)
@@ -12,5 +14,17 @@ class ArrayUtils
         } else {
             echo "Não foi encontrado no array.";
         }
+    }
+
+    public static function encontrarPessoasComSaldoMaior(int $saldo, array $array): array
+    {
+        $correntistasComSaldoMaior = array();
+        foreach($array as $chave => $valor){
+            if($valor > $saldo){
+                $correntistasComSaldoMaior[] = $chave;
+            }
+        }
+
+        return $correntistasComSaldoMaior;
     }
 }

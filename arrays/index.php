@@ -16,10 +16,10 @@ $saldos = [
 
 $relacionados = array_combine($correntistas, $saldos);
 
-echo $relacionados["Giovanni"];
+echo "O saldo do Giovanni é: {$relacionados["Giovanni"]}";
 
-$relacionados["Matheus"] = 4500;
-
-echo "<pre>";
-var_dump($relacionados);
-echo "</pre>";
+if(array_key_exists("João", $relacionados)){
+    echo "O saldo do João é: {$relacionados["João"]}";  
+} else {
+    echo "Não foi encontrado";
+}

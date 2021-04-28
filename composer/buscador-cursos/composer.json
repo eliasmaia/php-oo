@@ -1,0 +1,12 @@
+{
+    "name": "eliasmaia/buscador-cursos",
+    "description": "Projeto que busca os cursos no site da Alura",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Elias Moraes",
+            "email": "eeliasmaia@gmail.com"
+        }
+    ],
+    "require": {}
+}

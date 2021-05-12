@@ -8,5 +8,9 @@
             "email": "eeliasmaia@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "guzzlehttp/guzzle": "^7.3",
+        "symfony/dom-crawler": "5.2.4",
+        "symfony/css-selector": "^5.2"
+    }
 }

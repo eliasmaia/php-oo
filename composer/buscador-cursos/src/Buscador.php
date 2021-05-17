@@ -29,7 +29,7 @@ class Buscador
         $html = $resposta->getBody();
         $this->crawler->addHtmlContent($html);
 
-        $elementosCursos = $this->crawler->filter('span.card-curso__nome');
+        $elementosCursos = $this->crawler->filter('.feed-post-link.gui-color-primary.gui-color-hover');
         $cursos = [];
 
         foreach ($elementosCursos as $elemento) {
